@@ -18,8 +18,8 @@ import java.util.List;
  */
 @Data
 @Component
-@ConfigurationProperties(prefix = "swagger")
-public class SwaggerProperties {
+@ConfigurationProperties(prefix = "springdoc")
+public class SpringDocProperties {
 
     /**
      * 文档基本信息

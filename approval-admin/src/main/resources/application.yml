@@ -6,10 +6,6 @@ project-config:
   version: ${spring-flowable-approval.version}
   # 版权年份
   copyrightYear: 2024
-  # 实例演示开关
-  demoEnabled: true
-  # 获取ip地址开关
-  addressEnabled: true
   # 缓存懒加载
   cacheLazy: false
 
@@ -143,7 +139,7 @@ security:
 mybatis-plus:
   # 不支持多包, 如有需要可在注解配置 或 提升扫包等级
   # 例如 com.**.**.mapper
-  mapperPackage: com.**.**.mapper
+  mapperPackage: com.breeze.**.mapper
   # 对应的 XML 文件位置
   mapperLocations: classpath*:mapper/**/*Mapper.xml
   # 实体扫描，多个package用逗号或者分号分隔
@@ -196,8 +192,13 @@ mybatis-encryptor:
   publicKey:
   privateKey:
 
-# Swagger配置
-swagger:
+springdoc:
+  api-docs:
+    # 是否开启接口文档
+    enabled: true
+  #  swagger-ui:
+  #    # 持久化认证数据
+  #    persistAuthorization: true
   info:
     # 标题
     title: '标题：${project-config.name}后台管理系统_接口文档'
@@ -205,6 +206,11 @@ swagger:
     description: '描述：用于管理集团旗下公司的人员信息,具体包括XXX,XXX模块...'
     # 版本
     version: '版本号: ${spring-flowable-approval.version}'
+    # 作者信息
+    contact:
+      name: Lion Li
+      email: crazylionli@163.com
+      url: https://gitee.com/dromara/RuoYi-Vue-Plus
   components:
     # 鉴权方式配置
     security-schemes:
@@ -212,22 +218,14 @@ swagger:
         type: APIKEY
         in: HEADER
         name: ${sa-token.token-name}
-
-springdoc:
-  api-docs:
-    # 是否开启接口文档
-    enabled: true
-  swagger-ui:
-    # 持久化认证数据
-    persistAuthorization: true
   #这里定义了两个分组，可定义多个，也可以不定义
   group-configs:
     - group: 1.演示模块
-      packages-to-scan: com.breeze.demo
+      packages-to-scan: com.ruoyi.demo
     - group: 2.系统模块
-      packages-to-scan: com.breeze.web
+      packages-to-scan: com.ruoyi.web
     - group: 3.代码生成模块
-      packages-to-scan: com.breeze.generator
+      packages-to-scan: com.ruoyi.generator
 
 # 防止XSS攻击
 xss:
