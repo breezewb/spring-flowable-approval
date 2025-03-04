@@ -1,0 +1,1 @@
+${AnsiColor.GREEN} :: Approval Admin :: ${AnsiColor.BLUE} spring-flowable-approval:${AnsiColor.RED}${spring.profiles.active}${AnsiColor.BRIGHT_WHITE}        :: Application Version: ${spring-flowable-approval.version} ${spring-boot.formatted-version}
